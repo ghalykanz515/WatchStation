@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  const movieId = req.params.id;
+  const movieId = parseInt(req.params.id);
   const movie = movies.find(movie => movie.id === movieId);
   if (!movie) {
     return res.status(404).json({ error: 'Movie not found' });
